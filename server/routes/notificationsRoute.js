@@ -19,10 +19,27 @@ router.post("/add-notification", authMiddleware, async (req, res) => {
   }
 });
 
+// router.get("/get-all-notifications", authMiddleware, async (req, res) => {
+//   try {
+//     const notifications = await Notification.find({
+//       user: req.body.userId,
+//     }).sort({ createdAt: -1 });
+//     res.send({
+//       success: true,
+//       data: notifications,
+//     });
+//   } catch (error) {
+//     res.send({
+//       error: error.message,
+//       success: false,
+//     });
+//   }
+// });
 router.get("/get-all-notifications", authMiddleware, async (req, res) => {
   try {
+    const userId = req.query.userId || req.user.id; // Use query parameter or middleware-provided user ID
     const notifications = await Notification.find({
-      user: req.body.userId,
+      user: userId,
     }).sort({ createdAt: -1 });
     res.send({
       success: true,

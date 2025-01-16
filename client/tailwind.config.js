@@ -1,4 +1,20 @@
-/** @type {import('tailwindcss').Config} */
+// /** @type {import('tailwindcss').Config} */
+// module.exports = {
+//   content: [
+//     "./src/**/*.{js,jsx,ts,tsx}",
+//   ],
+//   theme: {
+//     extend: {
+//       colors: {
+//           primary : '#2E3840'
+//       }
+//     },
+//   },
+//   plugins: [],
+//   corePlugins: {
+//     preflight: false,
+//   },
+// }
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -6,12 +22,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-          primary : '#2E3840'
-      }
+        primary: '#2E3840',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('postcss-nested'), // Ensure this is here
+  ],
   corePlugins: {
     preflight: false,
   },
-}
+};
