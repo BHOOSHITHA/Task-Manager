@@ -17,7 +17,7 @@
 // }
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}", // Adjust this if your paths are different
   ],
   theme: {
     extend: {
@@ -27,9 +27,9 @@ module.exports = {
     },
   },
   plugins: [
-    require('postcss-nested'), // Ensure this is here
+    require('postcss-nested'), // PostCSS Nested plugin for handling CSS nesting
   ],
   corePlugins: {
-    preflight: false,
+    preflight: false, // Disable Tailwind's built-in styles if necessary
   },
 };
