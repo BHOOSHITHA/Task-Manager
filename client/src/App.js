@@ -1,3 +1,4 @@
+import './index.css'; 
 import { useSelector } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectedPage from "./components/ProtectedPage";
@@ -7,6 +8,8 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import ProjectInfo from "./pages/ProjectInfo";
 import Register from "./pages/Register";
+ // Adjust path if necessary
+
 
 function App() {
   const { loading } = useSelector((state) => state.loaders);

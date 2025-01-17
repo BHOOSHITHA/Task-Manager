@@ -15,21 +15,38 @@
 //     preflight: false,
 //   },
 // }
+// module.exports = {
+//   content: [
+//     "./src/**/*.{js,jsx,ts,tsx}", // Adjust this if your paths are different
+//   ],
+//   theme: {
+//     extend: {
+//       colors: {
+//         primary: '#2E3840',
+//       },
+//     },
+//   },
+//   plugins: [
+//     require('postcss-nested'), // PostCSS Nested plugin for handling CSS nesting
+//   ],
+//   corePlugins: {
+//     preflight: false, // Disable Tailwind's built-in styles if necessary
+//   },
+// };
+// tailwind.config.js
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}", // Adjust this if your paths are different
+    "./src/**/*.{js,jsx,ts,tsx}", // Adjust paths as per your project structure
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#2E3840',
+        primary: '#2E3840', // Custom primary color
       },
     },
   },
-  plugins: [
-    require('postcss-nested'), // PostCSS Nested plugin for handling CSS nesting
-  ],
+  plugins: [], // Keep this empty unless adding other Tailwind plugins
   corePlugins: {
-    preflight: false, // Disable Tailwind's built-in styles if necessary
+    preflight: true, // Disable default Tailwind preflight if necessary
   },
 };
